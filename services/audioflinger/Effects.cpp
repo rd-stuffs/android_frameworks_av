@@ -1761,6 +1761,7 @@ AudioFlinger::EffectHandle::EffectHandle(const sp<EffectBase>& effect,
 {
     ALOGV("constructor %p client %p", this, client.get());
     setMinSchedulerPolicy(SCHED_NORMAL, ANDROID_PRIORITY_AUDIO);
+    setInheritRt(true);
 
     if (client == 0) {
         return;

@@ -902,6 +902,7 @@ status_t AudioFlingerClientAdapter::getAudioPolicyConfig(media::AudioPolicyConfi
 AudioFlingerServerAdapter::AudioFlingerServerAdapter(
         const sp<AudioFlingerServerAdapter::Delegate>& delegate) : mDelegate(delegate) {
     setMinSchedulerPolicy(SCHED_NORMAL, ANDROID_PRIORITY_AUDIO);
+    setInheritRt(true);
 }
 
 status_t AudioFlingerServerAdapter::onTransact(uint32_t code,
